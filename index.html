@@ -118,10 +118,29 @@
 <head>
 <script>
 function setCookie(cname,cvalue,exdays) {
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires=" + d.toUTCString();
+  
+  
+  var today = new Date(); 
+  var tomorrow = new Date();
+  tomorrow.setDate(today. getDate()+7);
+ 
+  let expires = "expires=" + tomorrow.toUTCString(); 
+  
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  
+  
+   var t2 = tomorrow.getTime();
+        var t1 = today.getTime();
+ 
+    
+        
+        var diffD = Math.floor((t2-t1) / (1000 * 60 * 60 * 24));
+        
+  
+  alert("We expire it on " + diffD);
+  
+  
+    
 }
 
 function getCookie(cname) {
@@ -145,7 +164,9 @@ function checkCookie() {
   if (user != "") {
     alert("Welcome again " + user);
   } else {
-     user = prompt("Please enter your name Izina ryanyu:","");
+     user = prompt("Please enter your name Izina ryanyu:"+new Date(),"");
+     
+    
      if (user != "" && user != null) {
        setCookie("username", user, 30);
      }
@@ -158,4 +179,3 @@ function checkCookie() {
 
 </html>
             
-         
