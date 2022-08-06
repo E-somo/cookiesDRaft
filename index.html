@@ -63,6 +63,15 @@
 <body>
     
 <div class="container register">
+
+
+<input type="date" id="dt" onchange="mydate1();" hidden/>
+<input type="text" id="ndt"  onclick="mydate1();" hidden />
+<input type="button" Value="press and select last" onclick="mydate();" /> 
+
+<input type="button" Value="N.B Info" onclick="myinfor();" /> 
+
+
             <div class="row">
                 <div class="col-md-12">
                         <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -163,6 +172,7 @@ function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
     alert("Welcome again " + user);
+    //setCookie("username", "", 30);
   } else {
      user = prompt("Please enter your name Izina ryanyu:"+new Date(),"");
      
@@ -172,10 +182,45 @@ function checkCookie() {
      }
   }
 }
+
+
+function mydate() {
+  //alert("");
+  document.getElementById("dt").hidden = false;
+  document.getElementById("ndt").hidden = true;
+}
+
+function mydate1() {
+  d = new Date(document.getElementById("dt").value);
+  dt = d.getDate();
+  mn = d.getMonth();
+  mn++;
+  yy = d.getFullYear();
+  document.getElementById("ndt").value = dt + "/" + mn + "/" + yy
+  document.getElementById("ndt").hidden = false;
+  document.getElementById("dt").hidden = true;
+  
+  
+   var t2 = new Date(); 
+        var t1 = d.getTime();
+
+        var diffD = Math.floor((t2-t1) / (1000 * 60 * 60 * 24));
+       
+  alert("We expire it on " + diffD);
+    
+}
+
+function myinfor() {
+alert(" For this to work well you must now you days of months  ");
+
+}
+
 </script>
 </head>
 
 <body onload="checkCookie()"></body>
 
 </html>
+
+
             
