@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,22 +16,25 @@
             .text-align{
                 margin-top: -3%;
                 margin-bottom: -9%;
+              
 
                 padding: 10%;
-                margin-left: 30%;
+                margin-left: 3%;
             }
             .form-new{
-                margin-right: 22%;
-                margin-left: 20%;
+                margin-right: 2%;
+              
+                margin-left: 2%;
             }
             .register-heading{
-                margin-left: 21%;
+                margin-left: 2%;
                 margin-bottom: 10%;
                 color: #e9ecef;
             }
             .register-heading h1{
-                margin-left: 21%;
+                margin-left: 2%;
                 margin-bottom: 10%;
+                
                 color: #e9ecef;
             }
             .register{
@@ -42,16 +49,19 @@
                 background: -webkit-linear-gradient(left, #055a4f, #00c6ff);
                 margin-top: 3%;
                 padding: 3%;
+                
                 border-radius: 2.5rem;
             }
             .btnSubmit
             {
-                width: 50%;
+                width: 100%;
                 border-radius: 1rem;
                 padding: 1.5%;
                 color: #fff;
                 background-color: #03612e;
                 border: none;
+               
+               
                 cursor: pointer;
                 margin-right: 6%;
                 color: rgb(246, 246, 252);
@@ -63,11 +73,13 @@
 <body>
     
 <div class="container register">
-
+<p id="p1"> dd/mm/yyyy</p>  below you will add the control of date whic is selected by and user   <br>
 
 <input type="date" id="dt" onchange="mydate1();" hidden/>
 <input type="text" id="ndt"  onclick="mydate1();" hidden />
-<input type="button" Value="press and select last" onclick="mydate();" /> 
+<input type="button" Value="press and select last" onclick="mydate();" />  <br> <br>
+
+
 
 <input type="button" Value="N.B Info" onclick="myinfor();" /> 
 
@@ -80,7 +92,7 @@
                                 <div class="col-md-12">
                                     <form method="post" autocomplete="off" name="google-sheet">
                                         <div class="form-group">
-                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>
+                                            <input type="text" name="Name" class="form-control" placeholder="Your Name *" value="" required=""/>  
                                         </div>
                                         <div class="form-group">
                                             <input type="text" name="Email" class="form-control" placeholder="Your Email *" value="" required=""/>
@@ -90,6 +102,9 @@
                              
                                         </div>
                                         
+      <p id="p1"> dd/mm  below you  
+                                        
+                                     
                                          <div class="form-group">
                                             <input type="number" name="Phone" class="form-control" placeholder="issue Type *" value="" required=""/>
                                           
@@ -106,7 +121,7 @@
         </div>
           
           <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxkgWotCMyvIKoT9aGtPCndZdHtHrq8i972t9CKAVjO6xC7T0I/exec'
+            const scriptURL = //'https://script.google.com/macros/s/AKfycbxkgWotCMyvIKoT9aGtPCndZdHtHrq8i972t9CKAVjO6xC7T0I/exec'
             const form = document.forms['google-sheet']
           
             form.addEventListener('submit', e => {
@@ -188,6 +203,11 @@ function mydate() {
   //alert("");
   document.getElementById("dt").hidden = false;
   document.getElementById("ndt").hidden = true;
+  
+  document.getElementById("p1").innerHTML = "mm/dd/yyyy";
+ 
+  
+ 
 }
 
 function mydate1() {
@@ -203,19 +223,27 @@ function mydate1() {
   
    var t2 = new Date(); 
         var t1 = d.getTime();
-
-        var diffD = Math.floor((t2-t1) / (1000 * 60 * 60 * 24));
-       
-  alert("We expire it on " + diffD);
+ 
     
+        
+        var diffD = Math.floor((t2-t1) / (1000 * 60 * 60 * 24));
+        document.getElementById("p1").innerHTML = "dd/mm/yyyy";
+        
+  
+  alert("We expire it on " + diffD);
+  
+  
 }
 
 function myinfor() {
-alert(" For this to work well you must now you days of months  ");
+alert(" Women with irregular cycles, which could include those who: \n just began menstruationjust discontinued use of a hormonal contraceptive method \n just gave birth \n are approaching menopause \n have Polycystic Ovary Syndrome \n Women with multiple sexual partners \n Women and their partners who do not want to avoid sex on fertile days \n Women who cannot track their fertility daily and keep careful records \n Women with STIs or abnormal discharge Abagore bafite inzinguzingo zidasanzwe, zishobora kubamo abo: \n batangiye imihango gusa bareke gukoresha uburyo bwo kuboneza urubyaro bwa hormone \n gusa babyaye \n begereje gucura \n bafite Syndrome ya Polycystic Ovary \n Abagore bafite abahuje ibitsina benshi \n Abagore na abafatanyabikorwa babo badashaka kwirinda imibonano mpuzabitsina muminsi yuburumbuke \n Abagore badashobora gukurikirana uburumbuke bwabo burimunsi kandi bagakomeza kwandika neza \n Abagore bafite indwara zandurira mu mibonano mpuzabitsina cyangwa gusohora bidasanzwe ");
 
 }
 
+
 </script>
+
+<p>The paragraph above was changed by a script.</p>
 </head>
 
 <body onload="checkCookie()"></body>
@@ -223,4 +251,7 @@ alert(" For this to work well you must now you days of months  ");
 </html>
 
 
-            
+
+
+
+
