@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,18 +64,77 @@
                 color: rgb(246, 246, 252);
                 margin-top: 4%;
             }
+            
+            .btn-group button {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+            
+            
+            
+            
     </style>
 
 </head>
 <body>
     
 <div class="container register">
-<p id="p1"> dd/mm/yyyy</p>  below you will add the control of date whic is selected by and user   <br>
+<p id="p1"> dd/mm/yyyy</p>  below you will add the control of date whic is selected  <br>
+
+
+<body>
+
+<h1>Button Group</h1>
+
+<div class="btn-group">
+
+    <button
+   onclick="myinfor()">English
+  </button> 
+  
+   
+   
+   <button
+   onclick="myinfor()">French
+  </button> 
+  
+  
+
+  <button
+   onclick="myinfor()">T_smart Solution
+  </button> 
+  
+</div>
+
+</body>
+
+
+
+ <br> 
 
 <input type="date" id="dt" onchange="mydate1();" hidden/>
 <input type="text" id="ndt"  onclick="mydate1();" hidden />
 <input type="button" Value="press and select last" onclick="mydate();" />  <br> <br>
-
 
 
 <input type="button" Value="N.B Info" onclick="myinfor();" /> 
@@ -249,6 +305,9 @@ alert(" Women with irregular cycles, which could include those who: \n just bega
 <body onload="checkCookie()"></body>
 
 </html>
+
+
+
 
 
 
